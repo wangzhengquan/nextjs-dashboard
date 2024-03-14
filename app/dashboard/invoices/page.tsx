@@ -7,11 +7,6 @@ import { InvoicesTableSkeleton } from '@/app/ui/skeletons';
 import { Suspense } from 'react';
 import { fetchInvoicesPages } from '@/app/lib/data';
 
-// async function PaginationWrapper({query}: {query: string}) {
-//   const totalPages = await fetchInvoicesPages(query);
-//   return <Pagination totalPages={totalPages} />;
-// }
-
 export default async function Page({
   searchParams,   // url search params
 }: {
