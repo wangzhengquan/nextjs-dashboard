@@ -1,4 +1,3 @@
-'use client';
 import Image from 'next/image';
 import CollapseButton from './collapse-button';
 import { Bars3Icon } from '@heroicons/react/24/outline';
@@ -8,17 +7,14 @@ import SideNav from './sidenav';
 import { createRoot } from "react-dom/client";
 // import profilePic from '@/public/customers/john-doe.jpg'
 
-export default function HeaderBar({onClickNavButton} : {onClickNavButton: ()=>void}) {
+export default function HeaderBar({}) {
   
   return (
     <>
-    <div className="flex shadow justify-between items-center min-h-headerh h-headerh max-h-headerh w-full">
-      <a className="block md:hidden" onClick={(e) => {
-          onClickNavButton();
-        }} 
-        >
+    <div className="flex justify-between items-center min-h-headerh h-headerh max-h-headerh w-full">
+      <button id="open-float-left-panel-btn" className="block md:hidden">
         <Bars3Icon className="h-6 w-6"/>
-      </a>
+      </button>
       <div className="grow-1"></div>
       <a href="" className="flex items-center py-3 grow-0">
       <Image

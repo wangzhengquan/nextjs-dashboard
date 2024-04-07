@@ -1,3 +1,4 @@
+'use client';
 import ArrayUtil from './array'
 import StringHelper from './string'
 var Dom7 = function (arr) {
