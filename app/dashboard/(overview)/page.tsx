@@ -9,6 +9,12 @@ import {
   LatestInvoicesSkeleton,
   CardsSkeleton
 } from '@/app/ui/skeletons';
+
+import DashboardSkeleton from '@/app/ui/skeletons';
+// export default function Loading() {
+//   return <DashboardSkeleton />;
+// }
+
 export default async function Page() {
   
   return (

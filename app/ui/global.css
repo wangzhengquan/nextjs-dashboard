@@ -2,6 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  :root {
+    --panel-width: 64px;
+    --panels-duration: 400ms;
+  }
+  
+}
+
+@layer components {   
+  
+}
+
+@layer utilities {
+  .hide-scrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+  
+}
+ 
 input[type='number'] {
   -moz-appearance: textfield;
   appearance: textfield;

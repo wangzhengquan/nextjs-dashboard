@@ -11,7 +11,6 @@ import { Button } from '@/app/ui/button';
 import { createInvoice } from '@/app/lib/actions';
 import { useFormState,  useFormStatus} from 'react-dom';
 import ErrorAria from '@/app/ui/error-aria';
-import clsx from 'clsx';
 
 export default function Form({ customers }: { customers: CustomerField[] }) {
   const initialState = { message: null, errors: {} };
