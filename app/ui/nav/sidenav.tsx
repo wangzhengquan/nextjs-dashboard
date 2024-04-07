@@ -11,6 +11,9 @@ import {
   DocumentDuplicateIcon,
   FolderIcon,
   CubeIcon,
+  ArrowDownTrayIcon,
+  ArrowTrendingUpIcon,
+  EyeIcon,
   PowerIcon,
 } from '@heroicons/react/24/outline';
 
@@ -21,9 +24,9 @@ const links1 = [
 ];
 
 const links2 = [
-  { name: 'Store Visibility', href: '/dashboard', icon: FolderIcon },
-  { name: 'App Downloads', href: '/dashboard/invoices', icon: CubeIcon, },
-  { name: 'Download Trends', href: '/dashboard/customers', icon: PowerIcon },
+  { name: 'Store Visibility', href: '/dashboard', icon: EyeIcon },
+  { name: 'App Downloads', href: '/dashboard/invoices', icon: ArrowDownTrayIcon, },
+  { name: 'Download Trends', href: '/dashboard/customers', icon: ArrowTrendingUpIcon },
 ];
 export default function SideNav({className, collapsed, onClickLink} : {className: string, collapsed: boolean, onClickLink?: (event: React.MouseEvent)=>void}) {
   
