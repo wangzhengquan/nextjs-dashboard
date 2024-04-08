@@ -36,9 +36,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     </FloatLeftPanel>
     {/*panel-overlay--> */}
     <BackdropPanel  />
-    <Script id="my-script">
-    console.log('Hello world!');
-    </Script>
     <EventsAdd />
     </>
   );

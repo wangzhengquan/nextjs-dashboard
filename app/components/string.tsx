@@ -1,4 +1,5 @@
 import Script from 'next/script'
+
 export default function StringUtil({}) {
     return (
     <Script id="string-helper-script">
@@ -9,9 +10,7 @@ export default function StringUtil({}) {
     var StringUtil = {
     };
     
-    StringUtil.trim = function(str) {
-        return str.replace(/(?:^[ \t\n\r]+)|(?:[ \t\n\r]+$)/g, '');
-    };
+    
     /**
      * 下划线样式转成驼峰样式
      * @param  {[type]} string [description]

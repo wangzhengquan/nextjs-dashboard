@@ -1,10 +1,10 @@
  
 import Script from 'next/script'
-import DomHelper from './dom';
+import DomUtil from './dom';
 export default function EventsAdd({}) {
   return(
   <>
-  <DomHelper />
+  <DomUtil />
   <Script id="events-add-script">
   {`
     dquery(document).on('change', '#left-panel-collapse-btn', function(e) {
