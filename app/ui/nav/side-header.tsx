@@ -12,7 +12,7 @@ export default function SideHeader({className}: {className: string}) {
       
     })}> 
       <LogoIcon  />
-      <span className={clsx("group-[.collapsed]:hidden", {})}>Storeity</span> 
+      <span className={clsx("group-[.collapsed]:hidden", {})}>Storeity2</span> 
       <CollapseButton/>
     </div>
   );

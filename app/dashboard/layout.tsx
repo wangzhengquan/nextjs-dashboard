@@ -6,7 +6,8 @@ import {FloatLeftPanel, BackdropPanel} from '@/app/components/panels';
 import clsx from 'clsx';
 import { ArrowLeftIcon } from '@heroicons/react/24/solid';
 import LogoIcon from '@/app/ui/logo-icon';
-import Interaction from '@/app/interaction/interaction';
+import EventsAdd from '@/app/components/events-add';
+import Script from 'next/script';
 
 export default function Layout({ children }: { children: React.ReactNode }) {
    
@@ -35,8 +36,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     </FloatLeftPanel>
     {/*panel-overlay--> */}
     <BackdropPanel  />
-
-    <Interaction />
+    <Script id="my-script">
+    console.log('Hello world!');
+    </Script>
+    <EventsAdd />
     </>
   );
 }
