@@ -641,7 +641,6 @@ export default function DomUtil({}) {
                     for (j = tempDiv.childNodes.length - 1; j >= 0; j--) {
                         this[i].insertBefore(tempDiv.childNodes[j], this[i].childNodes[0]);
                     }
-                    // this[i].insertAdjacentHTML('afterbegin', newChild);
                 }
                 else if (newChild instanceof Dom7) {
                     for (j = 0; j < newChild.length; j++) {
@@ -831,9 +830,6 @@ export default function DomUtil({}) {
         }
     };
     
-    // dquery.dataset = function (el) {
-    //     return dquery(el).dataset();
-    // };
     
     dquery.getTranslate = function (el, axis) {
         var matrix, curTransform, curStyle, transformMatrix;

@@ -3,7 +3,7 @@ export default function ArrayUtil({}) {
     return (
     <Script id="array-util-script">
         {`
-        var ArrayUtil = {}
+        var ArrayUtil = {};
 
         ArrayUtil.isArray = function (val) {
             if (!val) {
@@ -14,7 +14,7 @@ export default function ArrayUtil({}) {
 
         ArrayUtil.toArray = function (obj, offset) {
             return Array.prototype.slice.call(obj, offset || 0);
-        }
+        };
 
         ArrayUtil.each = function (obj, fn) {
             if (ArrayUtil.isArray(obj)) {
@@ -35,7 +35,7 @@ export default function ArrayUtil({}) {
         };
 
         ArrayUtil.inArray = function (arr, val) {
-            for (var i = 0, len = arr.length; i < len; i++) {
+            for (let i = 0, len = arr.length; i < len; i++) {
                 if (val === arr[i]) {
                     return i;
                 }
@@ -45,7 +45,7 @@ export default function ArrayUtil({}) {
 
         ArrayUtil.unique = function (arr) {
             var unique = [];
-            for (var i = 0; i < arr.length; i++) {
+            for (let i = 0; i < arr.length; i++) {
                 if (unique.indexOf(arr[i]) === -1) unique.push(arr[i]);
             }
             return unique;
