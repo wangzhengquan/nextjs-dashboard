@@ -1,49 +1,51 @@
-var ArrayHelper = {}
-
-ArrayHelper.isArray = function (val) {
-    if (!val) {
-        return false;
-    }
-    return Object.prototype.toString.call(val) === '[object Array]';
-};
-
-ArrayHelper.toArray = function (obj, offset) {
-    return Array.prototype.slice.call(obj, offset || 0);
-}
-
-ArrayHelper.each = function (obj, fn) {
-    if (ArrayHelper.isArray(obj)) {
-        for (var i = 0, len = obj.length; i < len; i++) {
-            if (fn.call(obj[i], obj[i], i) === false) {
-                break;
-            }
+const ArrayHelper = {
+    isArray: function (val: any): boolean {
+        if (!val) {
+            return false;
         }
-    } else {
-        for (var key in obj) {
-            if (obj.hasOwnProperty(key)) {
-                if (fn.call(obj[key], obj[key], key) === false) {
+        return Object.prototype.toString.call(val) === '[object Array]';
+    },
+
+    toArray: function (obj: any, offset?: number): any[] {
+        return Array.prototype.slice.call(obj, offset || 0);
+    },
+
+    each: function (obj: any, fn: (value: any, index: number | string) => boolean): void {
+        if (ArrayHelper.isArray(obj)) {
+            for (let i = 0, len = obj.length; i < len; i++) {
+                if (fn.call(obj[i], obj[i], i) === false) {
                     break;
                 }
             }
+        } else {
+            for (let key in obj) {
+                if (obj.hasOwnProperty(key)) {
+                    if (fn.call(obj[key], obj[key], key) === false) {
+                        break;
+                    }
+                }
+            }
         }
-    }
+    },
+
+    inArray: function (arr: any[], val: any): number {
+        for (let i = 0, len = arr.length; i < len; i++) {
+            if (val === arr[i]) {
+                return i;
+            }
+        }
+        return -1;
+    },
+
+    unique: function (arr: any[]): any[] {
+        const unique: any[] = [];
+        for (let i = 0; i < arr.length; i++) {
+            if (unique.indexOf(arr[i]) === -1) {
+                unique.push(arr[i]);
+            }
+        }
+        return unique;
+    },
 };
 
-ArrayHelper.inArray = function (arr, val) {
-    for (var i = 0, len = arr.length; i < len; i++) {
-        if (val === arr[i]) {
-            return i;
-        }
-    }
-    return -1;
-}
-
-ArrayHelper.unique = function (arr) {
-    var unique = [];
-    for (var i = 0; i < arr.length; i++) {
-        if (unique.indexOf(arr[i]) === -1) unique.push(arr[i]);
-    }
-    return unique;
-};
-
-export default ArrayHelper
+export default ArrayHelper;
